@@ -8,6 +8,8 @@ const my_link_list = [{
 },
 ]
 
+const heute = new Date(); // aktuelles Datum und aktuelle Zeit  
+
 // const calendarButton = document.querySelector(".btn-start");
 const calendarContainer = document.querySelector(".container");
 
@@ -16,6 +18,13 @@ const calendarDays = 24;
 const openDoor = (path, event) => {
     var pos_of_minus = `${path}`.search('-') + 1
     var day = `${path}`.substring(pos_of_minus)
+    if (day > heute.getDate() || true) {
+
+        console.log('door will not open :-)')
+        alert("Hey, sei nicht so neugierig!!");
+        return
+    }
+
     console.log('day: ' + day)
     event.target.parentNode.style.backgroundImage = `url(${path}.jpg)`;
     event.target.style.opacity = "0";
