@@ -1,10 +1,10 @@
 const my_link_list = [{
-    "link": "http://www.spiegel.de",
-    "text": "Drück mich, wenn Du Dich traust :-)"
+    "link": "../links/01_schnee_schippen.avi",
+    "text": "Noch mehr Schnee gefällig?"
 },
 {
-    "link": "http://www.spiegel.de",
-    "text": "Bin der zweite Link - für Tag 2"
+    "link": "../links/02_wer_fehlt.jpg",
+    "text": "Und wer fehlt hier?"
 },
 ]
 
@@ -18,12 +18,12 @@ const calendarDays = 24;
 const openDoor = (path, event) => {
     var pos_of_minus = `${path}`.search('-') + 1
     var day = `${path}`.substring(pos_of_minus)
-    if (day > heute.getDate() || true) {
+    // if (day > heute.getDate()) {
 
-        console.log('door will not open :-)')
-        alert("Hey, sei nicht so neugierig!!");
-        return
-    }
+    //     console.log('door will not open :-)')
+    //     alert("Hey, sei nicht so neugierig!!");
+    //     return
+    // }
 
     console.log('day: ' + day)
     event.target.parentNode.style.backgroundImage = `url(${path}.jpg)`;
