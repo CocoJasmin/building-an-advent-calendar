@@ -18,12 +18,11 @@ const calendarDays = 24;
 const openDoor = (path, event) => {
     var pos_of_minus = `${path}`.search('-') + 1
     var day = `${path}`.substring(pos_of_minus)
-    // if (day > heute.getDate()) {
-
-    //     console.log('door will not open :-)')
-    //     alert("Hey, sei nicht so neugierig!!");
-    //     return
-    // }
+    if (day > heute.getDate()) {
+        console.log('door will not open :-)')
+        alert("Hey, sei nicht so neugierig!!");
+        return
+    }
 
     console.log('day: ' + day)
     event.target.parentNode.style.backgroundImage = `url(${path}.jpg)`;
