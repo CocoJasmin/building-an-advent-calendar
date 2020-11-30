@@ -1,12 +1,43 @@
+const my_link_list = [{
+    "link": "../links/01_schnee_schippen.avi",
+    "text": "Noch mehr Schnee gefällig?"
+},
+{
+    "link": "../links/02_wer_fehlt.jpg",
+    "text": "Und wer fehlt hier?"
+},
+]
+
+const heute = new Date(); // aktuelles Datum und aktuelle Zeit  
+
 // const calendarButton = document.querySelector(".btn-start");
 const calendarContainer = document.querySelector(".container");
 
 const calendarDays = 24;
 
 const openDoor = (path, event) => {
+    var pos_of_minus = `${path}`.search('-') + 1
+    var day = `${path}`.substring(pos_of_minus)
+    // if (day > heute.getDate()) {
+
+    //     console.log('door will not open :-)')
+    //     alert("Hey, sei nicht so neugierig!!");
+    //     return
+    // }
+
+    console.log('day: ' + day)
     event.target.parentNode.style.backgroundImage = `url(${path}.jpg)`;
     event.target.style.opacity = "0";
     event.target.style.backgroundColor = "#521751";
+
+    // Setze URL Link
+    // var url_link = JSON.parse(my_link_list);
+    my_link = my_link_list[day - 1]
+    console.log('my_link: ' + my_link)
+    if (my_link != null) {
+        event.target.parentNode.innerHTML = my_link_list[day - 1].text.link(my_link_list[day - 1].link);
+    }
+    // spiele Audio (falls vorhanden)
     var audio = new Audio(`${path}.mp3`);
     audio.play();
 }
