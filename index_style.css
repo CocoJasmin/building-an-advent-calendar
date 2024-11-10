@@ -1,0 +1,48 @@
+ /* Seitenhintergrund und zentrierte Positionierung */
+body {
+    background-image: url('./resources/christmas_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Anmeldeformular Design */
+.login-container {
+    background-color: #36442D;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color:#A70000;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.form-control {
+    border-radius: 5px;
+    background-color:#ffffff;
+    color: #000000;
+    border-color: #A70000;
+}
+
+.btn-custom {
+    background-color:#A70000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 20px; /* Abgerundete Ecken */
+}

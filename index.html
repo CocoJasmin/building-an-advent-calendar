@@ -5,14 +5,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Der Dotzi Adventskalender</title>
-  </head>
 
-  <body>
-    <!-- <button class="btn-start">Starte Kalender :-)</button> -->
-    <div class="container">
-      <script src="main.js"></script>
+    <title>Der Dotzi Adventskalender</title>
+     <!-- Bootstrap CSS -->
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="index_style.css" />
+    </head>
+
+ <body>
+    <div class="login-container">
+      <!-- Begrüßungstext -->
+      <h1>Willkommen!</h1>
+      <p>Wähle deine Gruppe, um zum Kalender zu gelangen.</p>
+
+      <!-- Anmeldeformular -->
+      <form id="loginForm">
+        <div class="form-group">
+          <button type="button" class="btn-custom" id="dotzisFamily">Dotzis-Family</button>
+          <button type="button" class="btn-custom" id="frankfurterNerds">Frankfurter-Nerds</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.getElementById('loginForm');
+        if (loginForm) {
+          document.getElementById('dotzisFamily').addEventListener('click', function() {
+            window.location.href = '/dotzis_family/dotzis_family.html?nocache=' + new Date().getTime();
+          });
+
+          document.getElementById('frankfurterNerds').addEventListener('click', function() {
+            window.location.href = '/frankfurt/frankfurt_stammtisch.html?nocache=' + new Date().getTime();
+          });
+        }
+      });
+    </script>
+
+           <!-- Bootstrap JavaScript (optional für erweiterte Funktionalität) -->
+      <!-- Bootstrap JavaScript (lokal) -->
+      <script src="js/bootstrap.bundle.min.js"></script>     
   </body>
 
 </html>

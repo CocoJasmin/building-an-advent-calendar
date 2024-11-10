@@ -1,11 +1,28 @@
-# .htaccess-Datei für Passwortschutz
-# reroute to ssl version
+
+# .htaccess-Datei für Passwortschutz# reroute to ssl version
+# RewriteEngine On: Aktiviert das URL-Rewriting, das es ermöglicht, URLs basierend auf bestimmten Regeln zu ändern.
+# RewriteCond %{HTTPS} !=on: Diese Bedingung prüft, ob die aktuelle Verbindung nicht über HTTPS erfolgt.
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]:Bedingung erfüllt (= Verbindung nicht HTTPS)=> Anfrage wird zur HTTPS-Version umgeleitet.
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+
 # Authenticate
+# AuthType Basic: Authentifizierungsmethode, "Basic" bedeutet, Benutzername und Passwort in Base64-codiertem Format
+# AuthName : Text im Authentifizierungsdialog
+# AuthUserFile: Pfad zur .htpasswd-Datei,mit Benutzernamen + verschlüsselter Passwörter
+# Require valid-user: Zugriff nur für Benutzer, aus der .htpasswd-Datei & gültiges Passwort 
 AuthType Basic
 AuthName "Geschützter Bereich der Dotzis - Bitte gib Dein Passwort ein!"
 AuthUserFile /var/www/vhosts/hosting107306.a2f21.netcup.net/httpdocs/.htpasswd
+
 Require valid-user
+
+<Files "frankfurt_stammtisch.html">
+	Require user FrankfurterSchnee cosi
+</Files>
+
+<Files "dotzis_family.html">
+	Require user cosi heiko laura doti
+</Files>
