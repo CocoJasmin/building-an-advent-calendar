@@ -1,6 +1,6 @@
  /* Seitenhintergrund und zentrierte Positionierung */
 body {
-    background-image: url('./resources/christmas_bg.jpg');
+    background-image: url('christmas_bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
