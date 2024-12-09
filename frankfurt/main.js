@@ -30,7 +30,30 @@ const my_link_list = [
   {
     link: "https://www.youtube.com/watch?v=r5sTTlph2Vk",
     text: "Wenn morgen wieder Montag ist und noch zwei Wochen bis Weihnachten…",
+    },
+    {
+    link: "https://www.youtube.com/watch?v=llqWTJGUFeE",
+    text: "You know what?",
   },
+  {
+    link: "https://www.dotzis.de/frankfurt/courses/course-10-Otter.jpg",
+    text: "Welches Wasserlebewesen mit vier Pfoten lässt sich nur im Winter an Land blicken?",
+  },
+  {
+    link: "https://www.youtube.com/watch?v=yup8gIXxWDU",
+    text: "Und jetzt alle!",
+  },
+  {
+    link: "./",
+    text: "",
+  },
+  {
+    link: "https://www.youtube.com/watch?v=0NXLKOfXkoI",
+    text: "<- oder Hier!",
+  },
+
+
+
 ];
 
 const heute = new Date(); // aktuelles Datum und Zeit
@@ -84,18 +107,20 @@ modal.addEventListener("click", (event) => {
 const openDoor = (path, event) => {
   const day = parseInt(path.split("-").pop(), 10);
 
+  /*
   // Tür nur öffnen, wenn das Datum gültig ist
   if (day > heute.getDate() || heute.getMonth() < 11) {
     alert("Hey, sei nicht so neugierig!!");
     return;
   }
+  */
 
   // Zeige das Bild hinter der Tür
   event.target.parentNode.style.backgroundImage = `url(${path}.jpg)`;
   event.target.style.opacity = "0";
   event.target.style.backgroundColor = "#521751";
 
-  // Setze URL und Text, falls vorhanden
+    // Setze URL und Text, falls vorhanden
   const my_link = my_link_list[day - 1];
   if (my_link) {
     const linkElement = document.createElement("a");

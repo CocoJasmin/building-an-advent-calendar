@@ -48,6 +48,7 @@
   font-weight: bold;
   font-style: italic;
   color: rgb(212, 168, 46);
+  text-shadow: 2px 2px 2px black;
   padding: 20px;
   border: 2px solid black;
   transition: opacity 2.5s;
