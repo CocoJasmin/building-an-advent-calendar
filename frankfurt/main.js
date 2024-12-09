@@ -107,13 +107,11 @@ modal.addEventListener("click", (event) => {
 const openDoor = (path, event) => {
   const day = parseInt(path.split("-").pop(), 10);
 
-  /*
   // Tür nur öffnen, wenn das Datum gültig ist
   if (day > heute.getDate() || heute.getMonth() < 11) {
     alert("Hey, sei nicht so neugierig!!");
     return;
   }
-  */
 
   // Zeige das Bild hinter der Tür
   event.target.parentNode.style.backgroundImage = `url(${path}.jpg)`;
